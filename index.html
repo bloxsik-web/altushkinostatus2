@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статус</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            background-color: rgb(9, 10, 14); 
+            color: #f0f8ff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 40px;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .stats-container {
+            background-color: rgb(22, 26, 37);
+            border-radius: 16px;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .stat-item .number {
+            font-size: 38px;
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-item .label {
+            color: rgba(255,255,255,0.4);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .components-box {
+            background-color: rgb(22, 26, 37);
+            border-radius: 16px;
+            padding: 6px 20px;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .status-row:last-child {
+            border-bottom: none;
+        }
+
+        .status-row .name {
+            color: rgba(255,255,255,0.8);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .status-row .status {
+            color: #4caf50;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .status-row .status-offline {
+            color: #ef5350;
+        }
+        .status-row .status-ok {
+            color: #4caf50;
+        }
+        .status-row .status-work {
+            color: #e2b042;
+        }
+
+        .history-box {
+            background-color: rgb(22, 26, 37);
+            border-radius: 16px;
+            padding: 50px 20px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .history-empty .icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 12px;
+            opacity: 0.4;
+        }
+
+        .history-empty .main-text {
+            color: rgba(255,255,255,0.3);
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+
+        .history-empty .sub-text {
+            color: rgba(255,255,255,0.15);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+
+            .stats-container {
+                padding: 24px 16px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .stat-item .number {
+                font-size: 32px;
+            }
+
+            .components-box {
+                padding: 4px 16px;
+            }
+
+            .status-row {
+                padding: 12px 0;
+            }
+
+            .history-box {
+                padding: 40px 16px;
+                min-height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-item .number {
+                font-size: 28px;
+            }
+
+            .status-row .name {
+                font-size: 14px;
+            }
+
+            .status-row .status {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img class="logo" src="assets/logo.png" alt="Logo">
+
+    <div class="section-title">СТАТИСТИКА</div>
+    <div class="stats-container">
+        <div class="stat-item">
+            <span class="number">99,73%</span>
+            <span class="label">Аптайм (30д)</span>
+        </div>
+        <div class="stat-item">
+            <span class="number">0</span>
+            <span class="label">Инцидентов</span>
+        </div>
+        <div class="stat-item">
+            <span class="number">94 мин</span>
+            <span class="label">Ср. время решения</span>
+        </div>
+    </div>
+
+    <div class="section-title">КОМПОНЕНТЫ</div>
+    <div class="components-box">
+        <div class="status-row">
+            <span class="name">API</span>
+            <span class="status-ok">Работает</span>
+        </div>
+        <div class="status-row">
+            <span class="name">Сайт</span>
+            <span class="status-offline">Технические работы</span>
+        </div>
+        <div class="status-row">
+            <span class="name">Плейс</span>
+            <span class="status-ok">Работает</span>
+        </div>
+    </div>
+
+    <div class="section-title">ИСТОРИЯ ИНЦИДЕНТОВ</div>
+    <div class="history-box">
+        <div class="history-empty">
+            <div class="main-text">Нет инцидентов за последние 30 дней</div>
+            <div class="sub-text">Все системы работают стабильно</div>
+        </div>
+    </div>
+</body>
+</html>
